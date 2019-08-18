@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="alert.js" type="text/javascript"></script>
+    <link href="alert.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+    <button id="btn">Click</button>
+    <button id="btn2">Click</button>
+<!-- 
+
+    <div class="hrx-modal-container">
+        <div class="hrx-modal">
+            <div class="hrx-modal-title">Modal Title</div>
+            <div class="hrx-modal-message">Modal message</div>
+            <div class="hrx-modal-footer"></div>
+        </div>
+        <div class="hrx-bg"></div>
+    </div> -->
+
+<script>
+
+$('#btn').on('click',function(){
+    $.alert({
+        message:'This is new alert !',
+        type:'success',
+        position:'bottom-left',
+        animation:'slidein'
+    });
+});
+$('#btn2').on('click',function(){
+    $.modal({
+        title:'This is Modal!',
+        message:'This is new alert !',
+    });
+});
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,189 @@
+.alert-container,.alert-container *{
+    padding:0px;
+    margin: 0px;
+}
+.alert-container{
+    position: fixed;    
+    overflow: visible;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.alert-message-wrap{
+    position: relative;
+    border: none;
+    border-radius: 3px;
+    opacity: 0;
+    margin: 0px;
+    padding:10px;
+    width: 260px;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    height: 0px;
+    
+}
+
+
+.alert-container.alert-right .alert-message-wrap{
+    right: -320px;
+}
+
+.alert-container.alert-left .alert-message-wrap{
+    left: -320px;
+}
+
+.alert-show{
+    transition: 1s linear all;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 1;
+    height: 100%;
+}
+
+.alert-top .alert-show{
+    margin-bottom:10px; 
+}
+
+.alert-bottom .alert-show{
+    margin-top:10px; 
+}
+
+/* Position of alert */
+.alert-top{top:15px;}
+.alert-left{left: 15px;}
+.alert-right{right: 15px;}
+.alert-bottom{bottom: 15px;}
+
+
+
+
+/* Type of alert */
+.alert-success{
+    background: green;
+    color:white;
+    border:1px solid darkgreen;
+}
+.alert-danger{
+    background: red;
+    color:white;
+    border:1px solid darkred;
+}
+.alert-warning{
+    background: orangered;
+    color:white;
+    border:1px solid darkorange;
+}
+
+/* animation class */
+.alert-right .alert-message-wrap.alert-slide-in{
+    animation-name: slideIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0; 
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    right: 0px;
+}
+.alert-left .alert-message-wrap.alert-slide-in{
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0; 
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    left:0px;
+}
+
+.alert-fade-in{
+
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-delay: 0; 
+    animation-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+/* animation */
+@keyframes slideIn{
+    0%{
+        right:-320px;
+    }
+   40%{
+        right:50px;
+    }
+    50%{
+        right: 0px;
+    }
+}
+@keyframes slideInLeft{
+    0%{
+        left:-320px;
+    }
+   40%{
+        left:50px;
+    }
+    50%{
+        left: 0px;
+    }
+}
+@keyframes fadeIn{
+    0%{
+       opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+/* Modal */
+.hrx-modal-container{
+    position : fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.hrx-modal{
+    position: absolute;
+    width: 40%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: white;
+    z-index: 2001;
+    top:10vh;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25)
+}
+
+.hrx-modal-title{
+    padding: 10px;
+    background: #f7f7f7;
+    font-weight: 500;
+    font-size: 18px;
+
+}
+.hrx-modal-message{
+    padding:10px;
+}
+
+.hrx-modal-footer{
+    padding:10px;
+    background: #f7f7f7;
+}
+
+.hrx-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 2000;
+}
