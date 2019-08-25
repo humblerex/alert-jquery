@@ -159,7 +159,8 @@
     background: white;
     z-index: 2001;
     top:10vh;
-    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25)
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.25);
+    transition: 0.3s linear all;
 }
 
 .hrx-modal-title{
@@ -186,4 +187,21 @@
     height: 100%;
     background: rgba(0,0,0,0.4);
     z-index: 2000;
+}
+.hrx-modal-close{
+    position: absolute;
+    top:1px;
+    right:5px;
+    font-family: cursive;
+    color:#ccc;
+    cursor: pointer;
+}
+
+.hrx-zoom-out{
+  transform:scale(0);
+  opacity:0;
+}
+.hrx-zoom-in{
+  transform:scale(1);
+  opacity:1;
 }

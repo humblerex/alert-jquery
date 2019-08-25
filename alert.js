@@ -64,13 +64,40 @@ $.modal = (options) => {
     var defOpt = {
         title : 'Modal title',
         message:'Here goes message',
+        animation:'zoomin'
     };
-    if ($('.modal-container').length == 0)
-        $("body").append('<div class="modal-container"></div>');
-
-    var settings = $.extend({}, defOpt, options);
-
+    if ($('.hrx-modal-container').length == 0)
+        $("body").append(`<div class="hrx-modal-container">
+        <div class="hrx-modal hrx-zoom-out">
+            <span class="hrx-modal-close"> x </span>
+            <div class="hrx-modal-title">Modal Title</div>
+            <div class="hrx-modal-message">Modal message</div>
+            <div class="hrx-modal-footer"></div>
+        </div>
+        <div class="hrx-bg"></div>
+        </div>`);
     
+    var modalContainer = $('.hrx-modal-container')[0];
+    var settings = $.extend({}, defOpt, options);
+    $(modalContainer).find('.hrx-modal-title').text(settings.title);
+    $(modalContainer).find('.hrx-modal-message').text(settings.message);
+    var closeBtn =  $(modalContainer).find('.hrx-modal-close');
+    $(document).on('click', '.hrx-modal-close', function() {
+        RemoveModalAnimation(modalContainer);
+        setTimeout(function(){$(modalContainer).remove();},300);
+    });
+    
+   
+    setTimeout(function(){
+       ApplyModalAnimation(modalContainer);},100);
+    
+};
+
+function ApplyModalAnimation(modalContainer){
+    $(modalContainer).find('.hrx-modal').removeClass('hrx-zoom-out').addClass('hrx-zoom-in');
+}
+function RemoveModalAnimation(modalContainer){
+    $(modalContainer).find('.hrx-modal').removeClass('hrx-zoom-in').addClass('hrx-zoom-out');
 }
 
 //Utility functions

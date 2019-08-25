@@ -11,19 +11,11 @@
 </head>
 <body>
     
-    <button id="btn">Click</button>
-    <button id="btn2">Click</button>
-<!-- 
+    <button id="btn">Alert</button>
+    <button id="btn2">Modal</button>
 
-    <div class="hrx-modal-container">
-        <div class="hrx-modal">
-            <div class="hrx-modal-title">Modal Title</div>
-            <div class="hrx-modal-message">Modal message</div>
-            <div class="hrx-modal-footer"></div>
-        </div>
-        <div class="hrx-bg"></div>
-    </div> -->
 
+    
 <script>
 
 $('#btn').on('click',function(){
@@ -38,6 +30,7 @@ $('#btn2').on('click',function(){
     $.modal({
         title:'This is Modal!',
         message:'This is new alert !',
+        animation:'zoomin'
     });
 });
 
