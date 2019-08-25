@@ -4,14 +4,14 @@ A plugin for simple and beautiful alert
 
 # Usage
 
-$('#btn').on('click',function(){
+```$('#btn').on('click',function(){
     $.alert({
         message:'This is new alert !',
         type:'success',
         position:'bottom-left',
         animation:'slidein'
     });
-});
+});```
 
 # Options
 type: success, danger, warning
