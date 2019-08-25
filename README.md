@@ -16,6 +16,8 @@ $('#btn').on('click',function(){
 ```
 
 # Options
-type: success, danger, warning
-position: top-right, bottom-right, top-left, bottom-left
-animation: slidein,fadein
+**type**: success, danger, warning
+
+**position**: top-right, bottom-right, top-left, bottom-left
+
+**animation**: slidein,fadein
